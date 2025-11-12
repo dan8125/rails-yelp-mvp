@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <h1 class="mb-4">Restaurants</h1>
+  <div>
+    <% @restaurants.each do |restaurant| %>
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <h3 class="card-title">
+            <%= link_to restaurant.name, restaurant_path(restaurant), class: "text-decoration-none" %>
+          </h3>
+          <p class="card-text"><strong>Address:</strong> <%= restaurant.address %></p>
+          <p class="card-text"><strong>Category:</strong> <%= restaurant.category.capitalize %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div>
+  <p><%= link_to '+ Add a new restaurant', new_restaurant_path, class: 'btn btn-primary mt-3' %></p>
+  </div>
+</div>
